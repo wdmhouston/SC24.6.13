@@ -20,3 +20,5 @@ Unit Tests:
    python -m unittest tests/predict.py
 
 Docs are generated using Sphinx, and are available in /app/project/docs/_build folder
+
+Online docs are available online: https://sc24613.readthedocs.io/en/main/
