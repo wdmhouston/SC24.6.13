@@ -1,0 +1,4 @@
+https://cloud.tencent.com/developer/article/1647268
+
+sudo docker build -t wdmhouston/sc24.6.13:0.1 .
+sudo docker run --rm -i -t -v /data/SC24.6.13/project:/app/project wdmhouston/sc24.6.13:0.1

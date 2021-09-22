@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deployment Guide &mdash; Fruit Identification Web Api 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Access API" href="accessapi.html" />
+    <link rel="prev" title="Welcome to Fruit Identification Web Api’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Fruit Identification Web Api
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deployment Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#repository">Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download">Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build">Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#train">Train</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="accessapi.html">Access API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trainmodel.html">Train model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unittest.html">Unit Test</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Fruit Identification Web Api</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Deployment Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/deployment.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="deployment-guide">
+<span id="depolyment"></span><h1>Deployment Guide<a class="headerlink" href="#deployment-guide" title="Permalink to this headline">¶</a></h1>
+<p>The goal of this page is to help you deploy this tool
+We will walk you through downloading the source, compiling the code, and testing the installation.</p>
+<section id="repository">
+<h2>Repository<a class="headerlink" href="#repository" title="Permalink to this headline">¶</a></h2>
+<p>The source for this Fruit Identification Web Api and related tools are hosted on <a class="reference external" href="https://github.com">Github</a>.
+<a class="reference external" href="https://github.com/wdmhouston/SC24.6.13">https://github.com/wdmhouston/SC24.6.13</a></p>
+</section>
+<section id="download">
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to directly download the source code as a zip file.
+We strongly suggest, however, that users don’t rely on this option.
+Instead, most users should use Git to either <em>clone</em> or <em>fork</em> the repository.
+This makes it much easier to stay up to date with the latest releases and bug fixes.
+If you are not familiar with the basics of Git, <a class="reference external" href="https://git-scm.com">here is a helpful resource</a> to get you started.</p>
+<p>The tutorial here assumes you will use a https clone with no specific credentials.</p>
+<p>If you do not already have Git installed on your system, you will need to install it.
+We recommend using a relatively recent version of Git, as there have been some notable improvements over the past few years.
+You can check if Git is already available by opening a terminal and typing</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git --version
+</pre></div>
+</div>
+<p>To download, run the following git clone command:</p>
+<p>git clone with https:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git colone https://github.com/wdmhouston/SC24.6.13.git
+</pre></div>
+</div>
+<p>git clone with ssh:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:wdmhouston/SC24.6.13.git
+</pre></div>
+</div>
+<p>git clone with GitHub CLI:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gh repo clone wdmhouston/SC24.6.13
+</pre></div>
+</div>
+<p>In this example,  we run the git clone command in folder /data, and we should get the following structure:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>SC24.6.13/
+├── README.md/
+├── requirements.txt/
+├─┬─  project/
+│ ├── __init__.py
+│ ├── _app.py
+│ ├── __init__.py
+│ ├── config.py
+│ ├── modules
+│ ├── utils
+│ ├── data
+│ ├── upload
+│ ├── docs
+│ └── tests/
+└── Dockerfile/
+</pre></div>
+</div>
+<p>where the Dockerfile and requirements.txt are provided to build a docker container with all components configured.</p>
+</section>
+<section id="build">
+<h2>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h2>
+<p>First, using a terminal, build the downloaded docker container.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> SC24.6.13
+deming@ml-instance:/data/SC24.6.13$ docker build -t wdmhouston/sc24.6.13:0.1 .
+Sending build context to Docker daemon  <span class="m">242</span>.9MB
+Step <span class="m">1</span>/6 : FROM tensorflow/tensorflow:2.6.0
+ ---&gt; 94fc08a3795e
+Step <span class="m">2</span>/6 : COPY ./requirements.txt /app/requirements.txt
+ ---&gt; Using cache
+ ---&gt; 5a50c951040e
+Step <span class="m">3</span>/6 : WORKDIR /app
+ ---&gt; Using cache
+ ---&gt; f4f64125c894
+Step <span class="m">4</span>/6 : RUN pip install -r requirements.txt
+ ---&gt; Using cache
+ ---&gt; 7faffa6d685e
+Step <span class="m">5</span>/6 : EXPOSE <span class="m">5000</span>
+ ---&gt; Using cache
+ ---&gt; cb9b49b580a2
+Step <span class="m">6</span>/6 : CMD python /app/project/app.py
+ ---&gt; Using cache
+ ---&gt; 2a120c3ab376
+Successfully built 2a120c3ab376
+Successfully tagged wdmhouston/sc24.6.13:0.1
+</pre></div>
+</div>
+<p>where wdmhouston/sc24.6.13:0.1 can be modified as your own name and version.</p>
+</section>
+<section id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<p>Second, train model to generate /app/project/data/model/model.h5 file. This file is needed for prediction. Please refer “unit test” chapter to train model.</p>
+</section>
+<section id="run">
+<h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>Third, run the docker container:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>deming@ml-instance:/data/SC24.6.13$ sudo docker run --rm -i -t -v /data/SC24.6.13/project:/app/project wdmhouston/sc24.6.13:0.1
+* Serving Flask app <span class="s1">&#39;app&#39;</span> <span class="o">(</span>lazy loading<span class="o">)</span>
+* Environment: production
+  WARNING: This is a development server. Do not use it <span class="k">in</span> a production deployment.
+  Use a production WSGI server instead.
+* Debug mode: on
+* Running on all addresses.
+  WARNING: This is a development server. Do not use it <span class="k">in</span> a production deployment.
+* Running on http://172.17.0.2:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+* Restarting with stat
+* Debugger is active!
+* Debugger PIN: <span class="m">108</span>-387-964
+</pre></div>
+</div>
+<p>where wdmhouston/sc24.6.13:0.1 should be replaced with your own name and version.</p>
+<p>If all goes well, you should have a complete copy of the this Fruit Idntification Web api and the api service is running.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This train model is only needed once to generate model.h5 file. After that, trained model will be used for prediction.</p>
+<p>If deployment fails, there is likely something wrong with your installation.</p>
+<p>If you find something is wrong, please consider posting an issue to our issue tracker (<a class="reference external" href="https://github.com/wdmhouston/SC24.6.13/issues">https://github.com/wdmhouston/SC24.6.13/issues</a>) .</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Fruit Identification Web Api’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="accessapi.html" class="btn btn-neutral float-right" title="Access API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Deming Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

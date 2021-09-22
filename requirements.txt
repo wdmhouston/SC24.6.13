@@ -1,0 +1,6 @@
+Flask==2.0.1
+numpy==1.19.5
+Pillow==8.3.2
+flask-restful
+setuptools
+flasgger

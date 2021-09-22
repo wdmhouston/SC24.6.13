@@ -1,0 +1,3 @@
+SWAGGER_TITLE = "API"
+SWAGGER_DESC = "API Service"
+SWAGGER_HOST = "localhost:5000"

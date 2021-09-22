@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Train model &mdash; Fruit Identification Web Api 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Unit Test" href="unittest.html" />
+    <link rel="prev" title="Access API" href="accessapi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Fruit Identification Web Api
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessapi.html">Access API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Train model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Train model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unittest.html">Unit Test</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Fruit Identification Web Api</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Train model</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/trainmodel.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="train-model">
+<span id="trainmodel"></span><h1>Train model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h1>
+<p>The out-of-box container has already included a trained model for immediate use. When more images are added to training/validation data folder, the model can be retrained.</p>
+<section id="id1">
+<h2>Train model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>To train model, first, launch a new train container or using existing container with /bin/bash command, for example,</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">$docker</span> run --rm -i -t -v /data/SC24.6.13/project:/app/project wdmhouston/sc24.6.13:0.1 /bin/bash
+</pre></div>
+</div>
+<p>second, run the train unit test,</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>root@8cab2c621396:/app:cd /app/project/
+root@8cab2c621396:/app/project# python -m unittest tests/train.py
+Found <span class="m">180</span> files belonging to <span class="m">3</span> classes.
+Found <span class="m">180</span> files belonging to <span class="m">3</span> classes.
+Found <span class="m">29</span> files belonging to <span class="m">3</span> classes.
+Model: <span class="s2">&quot;sequential&quot;</span>
+_________________________________________________________________
+Layer <span class="o">(</span><span class="nb">type</span><span class="o">)</span>                 Output Shape              Param <span class="c1">#</span>
+<span class="o">=================================================================</span>
+conv2d <span class="o">(</span>Conv2D<span class="o">)</span>              <span class="o">(</span>None, <span class="m">222</span>, <span class="m">222</span>, <span class="m">32</span><span class="o">)</span>      <span class="m">896</span>
+_________________________________________________________________
+max_pooling2d <span class="o">(</span>MaxPooling2D<span class="o">)</span> <span class="o">(</span>None, <span class="m">111</span>, <span class="m">111</span>, <span class="m">32</span><span class="o">)</span>      <span class="m">0</span>
+_________________________________________________________________
+batch_normalization <span class="o">(</span>BatchNo <span class="o">(</span>None, <span class="m">111</span>, <span class="m">111</span>, <span class="m">32</span><span class="o">)</span>      <span class="m">128</span>
+_________________________________________________________________
+...
+...
+Epoch <span class="m">16</span>/20
+<span class="m">6</span>/6 <span class="o">[==============================]</span> - 9s 1s/step - loss: <span class="m">0</span>.0135 - accuracy: <span class="m">0</span>.9944 - val_loss: <span class="m">25</span>.0667 - val_accuracy: <span class="m">0</span>.6207
+Epoch <span class="m">17</span>/20
+<span class="m">6</span>/6 <span class="o">[==============================]</span> - 9s 1s/step - loss: <span class="m">0</span>.0618 - accuracy: <span class="m">0</span>.9944 - val_loss: <span class="m">21</span>.6596 - val_accuracy: <span class="m">0</span>.7241
+Epoch <span class="m">18</span>/20
+<span class="m">6</span>/6 <span class="o">[==============================]</span> - 9s 1s/step - loss: <span class="m">0</span>.0192 - accuracy: <span class="m">0</span>.9889 - val_loss: <span class="m">21</span>.9505 - val_accuracy: <span class="m">0</span>.7241
+Epoch <span class="m">19</span>/20
+<span class="m">6</span>/6 <span class="o">[==============================]</span> - 9s 1s/step - loss: <span class="m">0</span>.2131 - accuracy: <span class="m">0</span>.9889 - val_loss: <span class="m">17</span>.6200 - val_accuracy: <span class="m">0</span>.7241
+Epoch <span class="m">20</span>/20
+<span class="m">6</span>/6 <span class="o">[==============================]</span> - 9s 1s/step - loss: <span class="m">0</span>.0293 - accuracy: <span class="m">0</span>.9889 - val_loss: <span class="m">11</span>.5269 - val_accuracy: <span class="m">0</span>.7931
+model trained. model is saved to /app/project/data/model/model.h5
+
+----------------------------------------------------------------------
+Ran <span class="m">0</span> tests <span class="k">in</span> <span class="m">0</span>.000s
+
+OK
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Train model only when needed.</p>
+<p>It is recommended to run in a seperated container to train model. The trained model file “model.h5” can be shared with different containers.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="accessapi.html" class="btn btn-neutral float-left" title="Access API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="unittest.html" class="btn btn-neutral float-right" title="Unit Test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Deming Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
