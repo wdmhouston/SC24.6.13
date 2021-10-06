@@ -22,3 +22,9 @@ Unit Tests:
 Docs are generated using Sphinx, and are available in /app/project/docs/_build folder
 
 Online docs are available online: https://sc24613.readthedocs.io/en/main/
+
+Try this prediction online: http://35.202.95.240/
+
+Note: 
+1. Currently, model is trained with 36 fruits data and more data will be added and trained in future.    
+2. When a high probablity(for example, 0.90) is returned, mostlikely, it means the predict result is correct. When trying to predict a untrained fruit type, it's expected to have low probablity.  This probablity critia value can be adjusted to decide the prediction is acceptable or not.
