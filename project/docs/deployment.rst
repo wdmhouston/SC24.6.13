@@ -11,7 +11,7 @@ Repository
 ==============================
 
 The source for this Fruit Identification Web Api and related tools are hosted on `Github <https://github.com>`_.
-https://github.com/wdmhouston/SC24.6.13
+https://github.com/wdmhouston/capstone_project_fruit_prediction
 
 Download
 ======================
@@ -38,28 +38,28 @@ git clone with https:
 
 .. code-block:: sh
 
-  git colone https://github.com/wdmhouston/SC24.6.13.git
+  git colone https://github.com/wdmhouston/capstone_project_fruit_prediction.git
   
 
 git clone with ssh:
 
 .. code-block:: sh
 
-  git clone git@github.com:wdmhouston/SC24.6.13.git
+  git clone git@github.com:wdmhouston/capstone_project_fruit_prediction.git
 
 
 git clone with GitHub CLI:
 
 .. code-block:: sh
 
-   gh repo clone wdmhouston/SC24.6.13
+   gh repo clone wdmhouston/capstone_project_fruit_prediction
    
 
 In this example,  we run the git clone command in folder /data, and we should get the following structure: 
   
 .. code-block:: sh
 
-  SC24.6.13/
+  capstone_project_fruit_prediction/
   ├── README.md/
   ├── requirements.txt/
   ├─┬─  project/
@@ -84,8 +84,8 @@ First, using a terminal, build the downloaded docker container.
 
 .. code-block:: sh
 
-  cd SC24.6.13
-  deming@ml-instance:/data/SC24.6.13$ docker build -t wdmhouston/sc24.6.13:0.1 .
+  cd capstone_project_fruit_prediction
+  deming@ml-instance:/data/capstone_project_fruit_prediction$ docker build -t wdmhouston/capstone_project_fruit_prediction:0.1 .
   Sending build context to Docker daemon  242.9MB
   Step 1/6 : FROM tensorflow/tensorflow:2.6.0
    ---> 94fc08a3795e
@@ -108,7 +108,7 @@ First, using a terminal, build the downloaded docker container.
   Successfully tagged wdmhouston/sc24.6.13:0.1
 
   
-where wdmhouston/sc24.6.13:0.1 can be modified as your own name and version.
+where wdmhouston/capstone_project_fruit_prediction:0.1 can be modified as your own name and version.
 
 Train
 ======================
@@ -121,7 +121,7 @@ Third, run the docker container:
 
 .. code-block:: sh
 
-    deming@ml-instance:/data/SC24.6.13$ sudo docker run --rm -i -t -v /data/SC24.6.13/project:/app/project wdmhouston/sc24.6.13:0.1
+    deming@ml-instance:/data/capstone_project_fruit_prediction$ sudo docker run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project wdmhouston/capstone_project_fruit_prediction:0.1
     * Serving Flask app 'app' (lazy loading)
     * Environment: production
       WARNING: This is a development server. Do not use it in a production deployment.
@@ -134,7 +134,7 @@ Third, run the docker container:
     * Debugger is active!
     * Debugger PIN: 108-387-964
 
-where wdmhouston/sc24.6.13:0.1 should be replaced with your own name and version.
+where wdmhouston/capstone_project_fruit_prediction:0.1 can be replaced with your own name and version.
 
 If all goes well, you should have a complete copy of the this Fruit Idntification Web api and the api service is running.
 
@@ -143,4 +143,4 @@ If all goes well, you should have a complete copy of the this Fruit Idntificatio
 	
 	If deployment fails, there is likely something wrong with your installation.
    
-	If you find something is wrong, please consider posting an issue to our issue tracker (https://github.com/wdmhouston/SC24.6.13/issues) .
+	If you find something is wrong, please consider posting an issue to our issue tracker (https://github.com/wdmhouston/capstone_project_fruit_prediction/issues) .

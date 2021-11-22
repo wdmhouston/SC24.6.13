@@ -13,10 +13,10 @@ To train model, first, launch a new train container or using existing container 
 
 .. code-block:: sh
 
-	$docker run --rm -i -t -v /data/SC24.6.13/project:/app/project wdmhouston/sc24.6.13:0.1 /bin/bash
+	$docker run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project wdmhouston/capstone_project_fruit_prediction:0.1 /bin/bash
 	
 
-second, run the train unit test,
+second, run the train unit test(the following output is generated from a simplified model),
 
 .. code-block:: sh
 

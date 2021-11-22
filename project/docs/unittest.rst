@@ -10,7 +10,7 @@ To run unit tests, run container with /bin/bash command,
 
 .. code-block:: sh
 
-	$docker run --rm -i -t -v /data/SC24.6.13/project:/app/project wdmhouston/sc24.6.13:0.1 /bin/bash
+	$docker run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project wdmhouston/capstone_project_fruit_prediction:0.1 /bin/bash
 
 
 Train model
@@ -23,7 +23,7 @@ Go to /app/project folder and run unit test for train model,
 	python -m unittest tests/train.py
 	
 
-for example,
+for example(the following output is generated from a simplified model),
 
 .. code-block:: sh
 

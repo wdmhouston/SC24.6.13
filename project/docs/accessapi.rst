@@ -10,7 +10,7 @@ prediction
 ==============================
 To predict, an image should be copied to upload folder in project folder, and the image name is appended to /api/predict/ in url.
 
-For example, to predict the fruit type from an image with name "apple_1.jpg" in upload folder:
+For example, to predict the fruit type from an image with name "apple_1.jpg" in upload folder(172.17.0.2 is the ip of the running docker image, replace it with the real ip in your case):
 
 .. code-block:: sh
 

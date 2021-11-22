@@ -3,11 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Fruit Identification Web Api's documentation!
+Welcome to Fruit Prediction Web Api's documentation!
 ========================================================
-Fruit Identification Web Api is a tool for predicting fruit type from image using deep learning(TensorFlow and Keras).
+Fruit Prediction Web Api is a tool for predicting fruit type from image using deep learning(TensorFlow and Keras).
 
 This tool provdes a standard restful api for prediction. It can also be used to train with new images.
+
+This web api is called by blogapp (https://github.com/wdmhouston/capstone_project_blogapp) to predict any image uploaded through blogapp.
+Check blogapp for more details.
 
 .. image:: container.jpg
 	:align: center

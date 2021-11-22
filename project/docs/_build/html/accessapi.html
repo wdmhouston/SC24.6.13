@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Access API &mdash; Fruit Identification Web Api 1.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Access API &mdash; Fruit Identification Web Api 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -37,7 +35,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Access API</a><ul>
@@ -72,13 +70,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="access-api">
+  <div class="section" id="access-api">
 <span id="accessapi"></span><h1>Access API<a class="headerlink" href="#access-api" title="Permalink to this headline">¶</a></h1>
 <p>The following apis are supported in current release.</p>
-<section id="prediction">
+<div class="section" id="prediction">
 <h2>prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
 <p>To predict, an image should be copied to upload folder in project folder, and the image name is appended to /api/predict/ in url.</p>
-<p>For example, to predict the fruit type from an image with name “apple_1.jpg” in upload folder:</p>
+<p>For example, to predict the fruit type from an image with name “apple_1.jpg” in upload folder(172.17.0.2 is the ip of the running docker image, replace it with the real ip in your case):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ curl http://172.17.0.2:5000/api/predict/apple_1.jpg
       <span class="o">{</span>
               <span class="s2">&quot;code&quot;</span>: <span class="m">0</span>,
@@ -100,31 +98,31 @@
 </pre></div>
 </div>
 <p>Below is a list of attributes returned by api/predict</p>
-<table class="docutils align-default">
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 86%" />
+<col width="14%" />
+<col width="86%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>name</p></th>
-<th class="head"><p>note</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">note</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>code</p></td>
-<td><p>0: success, 1: fail</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>code</td>
+<td>0: success, 1: fail</td>
 </tr>
-<tr class="row-odd"><td><p>nessage</p></td>
-<td><p>ok or reason of fail</p></td>
+<tr class="row-odd"><td>nessage</td>
+<td>ok or reason of fail</td>
 </tr>
-<tr class="row-even"><td><p>data</p></td>
-<td><p>image path and prediction result will be returned</p></td>
+<tr class="row-even"><td>data</td>
+<td>image path and prediction result will be returned</td>
 </tr>
 </tbody>
 </table>
 <p>zz</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
