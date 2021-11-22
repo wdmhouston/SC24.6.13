@@ -1,7 +1,7 @@
 .. _TrainModel:
 
 ###############################
-Train model
+Train modelx
 ###############################
 
 The out-of-box container has already included a trained model for immediate use. When more images are added to training/validation data folder, the model can be retrained.
