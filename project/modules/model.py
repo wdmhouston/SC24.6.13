@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 import tensorflow as tf
 import keras
-from keras.utils import np_utils, plot_model
+from keras.utils import np_utils
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
 from tensorflow.keras.callbacks import EarlyStopping
@@ -104,8 +104,6 @@ class model(object):
             metrics=["accuracy"],
         )
         self._model.summary()
-        
-        plot_model(model, to_file='model.png', show_shapes=True)
 
         history = self._model.fit(x=dataset,
                                   epochs=20,

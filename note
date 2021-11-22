@@ -1,4 +1,43 @@
+example commands to clone and build:
 git clone https://github.com/wdmhouston/capstone_project_fruit_prediction.git
 sudo docker build -t wdmhouston/capstone_project_fruit_prediction:0.1 .
 sudo docker run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project wdmhouston/capstone_project_fruit_prediction:0.1
 
+net2vis to visualize model:
+launch 
+   https://viscom.net2vis.uni-ulm.de/JP1OWtEEDH6UgoWb6CWeAJkhcuz8NmLuiYSMDd5WD3yg0PMsHF
+copy and paste the following code:
+import keras as k
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Dropout, Flatten, Dense
+from keras.layers import BatchNormalization
+
+def get_model():
+    input_shape = (224, 224, 3)
+    no_classes = 36    
+    model = Sequential()
+    model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=input_shape))
+    model.add(BatchNormalization())
+    
+    model.add(Conv2D(64, kernel_size=(3,3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    model.add(BatchNormalization())
+    
+    model.add(Conv2D(128, kernel_size=(3,3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    model.add(BatchNormalization())
+    
+    model.add(Conv2D(256, kernel_size=(3,3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    model.add(BatchNormalization())
+    
+    model.add(Conv2D(128, kernel_size=(3,3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+    model.add(BatchNormalization())
+
+    model.add(Dropout(0.25))
+    model.add(Flatten())
+    model.add(Dense(128, activation='relu'))
+    model.add(Dense(no_classes, activation='softmax'))
+
+    return model
