@@ -67,7 +67,7 @@ class model(object):
         class_names = dataset.class_names
         print(len(class_names))
         with open('class_names.pickle', 'wb') as handle:
-            pickle.dump(class_names, handle, protocol=pickle.HIGHEST_PROTOCOL)
+            pickle.dump(self._model_path+class_names, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
         self._model = Sequential()
         self._model.add(
