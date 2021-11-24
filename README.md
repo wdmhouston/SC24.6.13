@@ -1,6 +1,6 @@
 ![index](https://user-images.githubusercontent.com/19333848/143232194-2de2b373-d257-4680-b226-d281abe6f179.jpg)
 # Fruit Prediction with Deep Learning
-Springboard Machine Learning Career Track (May 2020, Deming Wang) - Capstone Project
+Springboard Machine Learning Career Track (May 2021, Deming Wang) - Capstone Project
 
 Fruit Prediction Web Api is a tool for predicting fruit type from images with deep learning(TensorFlow and Keras). 
 
