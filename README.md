@@ -5,7 +5,7 @@ Springboard Machine Learning Career Track (May 2020, Deming Wang) - Capstone Pro
 Fruit Prediction Web Api is a tool for predicting fruit type from images with deep learning(TensorFlow and Keras). 
 
 This tool provdes a standard restful api for prediction. It can also be used to train with new images. 
-This web api is called by blogapp (https://github.com/wdmhouston/capstone_project_blogapp) to predict any image uploaded through blogapp. The following picture shows how this web api(in red box) works with blogapp to privide Fruit Prediction service to end user.
+This web api is called by blogapp (https://github.com/wdmhouston/capstone_project_blogapp) to predict fruit type from any image uploaded through blogapp. The following picture shows how this web api(in red box) works with blogapp to privide Fruit Prediction service to end user.
 
 ![container](https://user-images.githubusercontent.com/19333848/143234426-59a050f4-13a3-4a9b-86cf-d57c06b098d6.jpg)
 
