@@ -5,11 +5,11 @@ Springboard Machine Learning Career Track (May 2020, Deming Wang) - Capstone Pro
 Fruit Prediction Web Api is a tool for predicting fruit type from images with deep learning(TensorFlow and Keras). 
 
 This tool provdes a standard restful api for prediction. It can also be used to train with new images. 
-This web api is called by blogapp (https://github.com/wdmhouston/capstone_project_blogapp) to predict any image uploaded through blogapp. Check blogapp for more details. | The following picture shows how this web api(in red box) works with blogapp to privide Fruit Prediction service to end user.
+This web api is called by blogapp (https://github.com/wdmhouston/capstone_project_blogapp) to predict any image uploaded through blogapp. The following picture shows how this web api(in red box) works with blogapp to privide Fruit Prediction service to end user.
 
 ![container](https://user-images.githubusercontent.com/19333848/143234426-59a050f4-13a3-4a9b-86cf-d57c06b098d6.jpg)
 
-This web api includes a trained model(Please refer to “Train model” for more details) with multiple layers setup shown in the following picture:
+This web api includes a pre-trained model(Please refer to “Train model” for more details) with multiple layers setup shown in the following picture:
 ![model](https://user-images.githubusercontent.com/19333848/143234443-c936edfc-a17c-4b32-afab-dd9042e09e43.jpg)
 
 The following picture shows the accuracy and loss plot from one training:
@@ -21,30 +21,21 @@ The following screenshots show how to predict fruit in blogapp and display the r
 ![demo1](https://user-images.githubusercontent.com/19333848/143234432-6ba1c085-da82-4a17-8504-a5936f4fefc2.jpg)
 ![demo2](https://user-images.githubusercontent.com/19333848/143234438-2cf35f26-c4f2-4009-9903-50217d109272.jpg)
 
+Links:
+1. Project presentation slides:
+https://github.com/wdmhouston/capstone_project_fruit_prediction/blob/main/Capstone_Project_Fruit_Prediction.pptx
 
-Build docker container:
-   docker build -t wdmhouston/sc24.6.13:0.1 .
+2. Fruit Prediction with Deep Learning source code:
+https://github.com/wdmhouston/capstone_project_fruit_prediction
 
-Run docker container:
-   sudo docker run --rm -i -t -v /data/SC24.6.13/project:/app/project wdmhouston/sc24.6.13:0.1
+3. Demon App source code:
+https://github.com/wdmhouston/capstone_project_blogapp
 
+4. Online Documentations for deployment, train, test, unit test 
+https://sc24613.readthedocs.io/en/main/
 
-Web API test:
-   curl http://172.17.0.2:5000/api/train
-   curl http://172.17.0.2:5000/api/predict
+Note:
+The dataset used in this demo is downloaded from https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a This dataset contains most popular fruits.
 
-Unit Tests:
-   ca /app/project
-   python -m unittest tests/train.py
-   python -m unittest tests/predict.py
-
-Docs are generated using Sphinx, and are available in /app/project/docs/_build folder
-
-Online docs are available online: https://sc24613.readthedocs.io/en/main/
-
-Try this prediction online: http://35.202.95.240/
-
-Note: 
-1. Currently, model is trained with 36 fruits data and more data will be added and trained in future.    
-2. When a high probablity(for example, 0.90) is returned, mostlikely, it means the predict result is correct. When trying to predict a untrained fruit type, it's expected to have low probablity.  This probablity critia value can be adjusted to decide the prediction is acceptable or not.
+In future, more and more fruit images will be added for more acccurate prediction, for example, Asian pear/European pear, li jujupe/lang jujupe.
 
