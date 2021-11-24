@@ -23,15 +23,19 @@ The following screenshots show how to predict fruit in blogapp and display the r
 
 ## Links:
 1. Project presentation slides:
+
 https://github.com/wdmhouston/capstone_project_fruit_prediction/blob/main/Capstone_Project_Fruit_Prediction.pptx
 
 2. Fruit Prediction with Deep Learning source code:
+
 https://github.com/wdmhouston/capstone_project_fruit_prediction
 
 3. Demon App source code:
+
 https://github.com/wdmhouston/capstone_project_blogapp
 
 4. Online Documentations for deployment, train, test, unit test 
+
 https://sc24613.readthedocs.io/en/main/
 
 ## Note:
