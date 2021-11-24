@@ -21,7 +21,7 @@ The following screenshots show how to predict fruit in blogapp and display the r
 ![demo1](https://user-images.githubusercontent.com/19333848/143234432-6ba1c085-da82-4a17-8504-a5936f4fefc2.jpg)
 ![demo2](https://user-images.githubusercontent.com/19333848/143234438-2cf35f26-c4f2-4009-9903-50217d109272.jpg)
 
-Links:
+## Links:
 1. Project presentation slides:
 https://github.com/wdmhouston/capstone_project_fruit_prediction/blob/main/Capstone_Project_Fruit_Prediction.pptx
 
@@ -34,7 +34,8 @@ https://github.com/wdmhouston/capstone_project_blogapp
 4. Online Documentations for deployment, train, test, unit test 
 https://sc24613.readthedocs.io/en/main/
 
-Note:
+## Note:
+
 The dataset used in this demo is downloaded from https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a This dataset contains most popular fruits.
 
 In future, more and more fruit images will be added for more acccurate prediction, for example, Asian pear/European pear, li jujupe/lang jujupe.
