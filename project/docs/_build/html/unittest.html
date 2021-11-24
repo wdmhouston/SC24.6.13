@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unit Test &mdash; Fruit Identification Web Api 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Unit Test &mdash; Fruit Prediction Web Api 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -24,7 +26,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Fruit Identification Web Api
+            <a href="index.html" class="icon icon-home"> Fruit Prediction Web Api
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -34,7 +36,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accessapi.html">Access API</a></li>
@@ -52,7 +54,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Fruit Identification Web Api</a>
+          <a href="index.html">Fruit Prediction Web Api</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -70,14 +72,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="unit-test">
+  <section id="unit-test">
 <span id="unittest"></span><h1>Unit Test<a class="headerlink" href="#unit-test" title="Permalink to this headline">¶</a></h1>
 <p>Two unit test scripts has already been included: train.py and predict.py. These two scripts are used to train model and run prediction.</p>
 <p>To run unit tests, run container with /bin/bash command,</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">$docker</span> run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project wdmhouston/capstone_project_fruit_prediction:0.1 /bin/bash
 </pre></div>
 </div>
-<div class="section" id="train-model">
+<section id="train-model">
 <h2>Train model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h2>
 <p>Go to /app/project folder and run unit test for train model,</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m unittest tests/train.py
@@ -114,13 +116,13 @@ Epoch <span class="m">20</span>/20
 model trained. model is saved to /app/project/data/model/model.h5
 
 ----------------------------------------------------------------------
-Ran <span class="m">0</span> tests in <span class="m">0</span>.000s
+Ran <span class="m">0</span> tests <span class="k">in</span> <span class="m">0</span>.000s
 
 OK
 </pre></div>
 </div>
-</div>
-<div class="section" id="predict">
+</section>
+<section id="predict">
 <h2>Predict<a class="headerlink" href="#predict" title="Permalink to this headline">¶</a></h2>
 <p>Go to /app/project folder and run unit test for prediction,</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m unittest tests/predict.py
@@ -133,19 +135,19 @@ Found <span class="m">180</span> files belonging to <span class="m">3</span> cla
 <span class="o">{</span><span class="s1">&#39;image&#39;</span>: <span class="s1">&#39;/app/project/data/data3/apple/Image_1.jpg&#39;</span>, <span class="s1">&#39;result&#39;</span>: <span class="s1">&#39;apple&#39;</span><span class="o">}</span>
 
 ----------------------------------------------------------------------
-Ran <span class="m">0</span> tests in <span class="m">0</span>.000s
+Ran <span class="m">0</span> tests <span class="k">in</span> <span class="m">0</span>.000s
 
 OK
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Train model only when needed.</p>
 <p>After training model, model file “model.h5” will be created in /app/project/data/model folder.</p>
-<p class="last">The trained model file “model.h5” can be shared with different containers.</p>
+<p>The trained model file “model.h5” can be shared with different containers.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

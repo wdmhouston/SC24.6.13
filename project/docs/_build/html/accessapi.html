@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Access API &mdash; Fruit Identification Web Api 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Access API &mdash; Fruit Prediction Web Api 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -25,7 +27,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Fruit Identification Web Api
+            <a href="index.html" class="icon icon-home"> Fruit Prediction Web Api
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -35,7 +37,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Access API</a><ul>
@@ -52,7 +54,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Fruit Identification Web Api</a>
+          <a href="index.html">Fruit Prediction Web Api</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -70,10 +72,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="access-api">
+  <section id="access-api">
 <span id="accessapi"></span><h1>Access API<a class="headerlink" href="#access-api" title="Permalink to this headline">¶</a></h1>
 <p>The following apis are supported in current release.</p>
-<div class="section" id="prediction">
+<section id="prediction">
 <h2>prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
 <p>To predict, an image should be copied to upload folder in project folder, and the image name is appended to /api/predict/ in url.</p>
 <p>For example, to predict the fruit type from an image with name “apple_1.jpg” in upload folder(172.17.0.2 is the ip of the running docker image, replace it with the real ip in your case):</p>
@@ -98,31 +100,31 @@
 </pre></div>
 </div>
 <p>Below is a list of attributes returned by api/predict</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="14%" />
-<col width="86%" />
+<col style="width: 14%" />
+<col style="width: 86%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">name</th>
-<th class="head">note</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>note</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>code</td>
-<td>0: success, 1: fail</td>
+<tbody>
+<tr class="row-even"><td><p>code</p></td>
+<td><p>0: success, 1: fail</p></td>
 </tr>
-<tr class="row-odd"><td>nessage</td>
-<td>ok or reason of fail</td>
+<tr class="row-odd"><td><p>nessage</p></td>
+<td><p>ok or reason of fail</p></td>
 </tr>
-<tr class="row-even"><td>data</td>
-<td>image path and prediction result will be returned</td>
+<tr class="row-even"><td><p>data</p></td>
+<td><p>image path and prediction result will be returned</p></td>
 </tr>
 </tbody>
 </table>
 <p>zz</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Fruit Identification Web Api'
+project = 'Fruit Prediction Web Api'
 copyright = '2021, Deming Wang'
 author = 'Deming Wang'
 

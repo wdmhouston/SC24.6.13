@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Train model &mdash; Fruit Identification Web Api 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Train model &mdash; Fruit Prediction Web Api 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -25,7 +27,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Fruit Identification Web Api
+            <a href="index.html" class="icon icon-home"> Fruit Prediction Web Api
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -35,7 +37,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accessapi.html">Access API</a></li>
@@ -52,7 +54,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Fruit Identification Web Api</a>
+          <a href="index.html">Fruit Prediction Web Api</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -70,13 +72,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="train-model">
+  <section id="train-model">
 <span id="trainmodel"></span><h1>Train model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h1>
-<p>The out-of-box container has already included a trained model for immediate use. When more images are added to training/validation data folder, the model can be retrained.</p>
-<div class="section" id="id1">
+<p>The out-of-box container has already included a trained model and train/validation/test dataset for immediate use.  If no data in model folder or no dataset found, please create new dataset or download from interset, for example, kaggle(see notes at the bottom of this page).</p>
+<p>When more images are added to training/validation data folder, the model can be retrained.</p>
+<section id="id1">
 <h2>Train model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>To train model, first, launch a new train container or using existing container with /bin/bash command, for example,</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">$docker</span> run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project wdmhouston/capstone_project_fruit_prediction:0.1 /bin/bash
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">$docker</span> run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project -v /apps/blog/web/image/upload:/app/project/upload -p <span class="m">5000</span>:5000 wdmhouston/capstone_project_fruit_prediction:0.1 /bin/bash
 </pre></div>
 </div>
 <p>second, run the train unit test(the following output is generated from a simplified model),</p>
@@ -110,18 +113,23 @@ Epoch <span class="m">20</span>/20
 model trained. model is saved to /app/project/data/model/model.h5
 
 ----------------------------------------------------------------------
-Ran <span class="m">0</span> tests in <span class="m">0</span>.000s
+Ran <span class="m">0</span> tests <span class="k">in</span> <span class="m">0</span>.000s
 
 OK
 </pre></div>
 </div>
+<p>Class_labels.pickle and model.h5 files are created after training. These two files are needed for prediction.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Train model only when needed.</p>
-<p class="last">It is recommended to run in a seperated container to train model. The trained model file “model.h5” can be shared with different containers.</p>
+<p>Check accuracy and loss plot after each training.</p>
+<p>It is recommended to run in a seperated container to train model. The trained model files(class_labels.pickle and model.h5) can be shared with different containers.</p>
+<p>The dataset used in this demo is downloaded from <a class="reference external" href="https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a">https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a</a>
+This dataset contains most popular fruits.</p>
+<p>In future, more and more fruit images will be added for more acccurate prediction, for example, asian pear/european pear, li jujupe/lang jujupe.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -4,16 +4,20 @@
 Train model
 ###############################
 
-The out-of-box container has already included a trained model for immediate use. When more images are added to training/validation data folder, the model can be retrained.
+The out-of-box container has already included a trained model and train/validation/test dataset for immediate use.  If no data in model folder or no dataset found, please create new dataset or download from interset, for example, kaggle(see notes at the bottom of this page).
+
+When more images are added to training/validation data folder, the model can be retrained.
 
 Train model
 ==============================
+
+
 
 To train model, first, launch a new train container or using existing container with /bin/bash command, for example,
 
 .. code-block:: sh
 
-	$docker run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project wdmhouston/capstone_project_fruit_prediction:0.1 /bin/bash
+	$docker run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project -v /apps/blog/web/image/upload:/app/project/upload -p 5000:5000 wdmhouston/capstone_project_fruit_prediction:0.1 /bin/bash
 	
 
 second, run the train unit test(the following output is generated from a simplified model),
@@ -54,7 +58,16 @@ second, run the train unit test(the following output is generated from a simplif
 	
 	OK
 
+Class_labels.pickle and model.h5 files are created after training. These two files are needed for prediction.
+
 .. note::
    Train model only when needed.
    
-   It is recommended to run in a seperated container to train model. The trained model file "model.h5" can be shared with different containers.
+   Check accuracy and loss plot after each training.
+   
+   It is recommended to run in a seperated container to train model. The trained model files(class_labels.pickle and model.h5) can be shared with different containers.
+   
+   The dataset used in this demo is downloaded from https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a
+   This dataset contains most popular fruits.
+   
+   In future, more and more fruit images will be added for more acccurate prediction, for example, asian pear/european pear, li jujupe/lang jujupe.

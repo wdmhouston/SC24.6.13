@@ -70,6 +70,10 @@ In this example,  we run the git clone command in folder /data, and we should ge
   │ ├── modules
   │ ├── utils
   │ ├── data
+  │ │   ├──model  
+  │ │   ├──train 
+  │ │   ├──validation 
+  │ │   └──test   
   │ ├── upload
   │ ├── docs
   │ └── tests/
@@ -121,7 +125,7 @@ Third, run the docker container:
 
 .. code-block:: sh
 
-    deming@ml-instance:/data/capstone_project_fruit_prediction$ sudo docker run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project wdmhouston/capstone_project_fruit_prediction:0.1
+    deming@ml-instance:/data/capstone_project_fruit_prediction$ sudo docker run --rm -i -t -v /data/capstone_project_fruit_prediction/project:/app/project -v /apps/blog/web/image/upload:/app/project/upload -p 5000:5000 wdmhouston/capstone_project_fruit_prediction:0.1
     * Serving Flask app 'app' (lazy loading)
     * Environment: production
       WARNING: This is a development server. Do not use it in a production deployment.

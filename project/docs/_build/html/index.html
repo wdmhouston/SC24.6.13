@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Fruit Prediction Web Api’s documentation! &mdash; Fruit Identification Web Api 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Welcome to Fruit Prediction Web Api’s documentation! &mdash; Fruit Prediction Web Api 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -24,7 +26,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> Fruit Identification Web Api
+            <a href="#" class="icon icon-home"> Fruit Prediction Web Api
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -34,7 +36,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accessapi.html">Access API</a></li>
@@ -48,7 +50,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Fruit Identification Web Api</a>
+          <a href="#">Fruit Prediction Web Api</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -66,16 +68,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="welcome-to-fruit-prediction-web-api-s-documentation">
+  <section id="welcome-to-fruit-prediction-web-api-s-documentation">
 <h1>Welcome to Fruit Prediction Web Api’s documentation!<a class="headerlink" href="#welcome-to-fruit-prediction-web-api-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Fruit Prediction Web Api is a tool for predicting fruit type from image using deep learning(TensorFlow and Keras).</p>
-<p>This tool provdes a standard restful api for prediction. It can also be used to train with new images.</p>
-<p>This web api is called by blogapp (<a class="reference external" href="https://github.com/wdmhouston/capstone_project_blogapp">https://github.com/wdmhouston/capstone_project_blogapp</a>) to predict any image uploaded through blogapp.
-Check blogapp for more details.</p>
+<p>Fruit Prediction Web Api is a tool for predicting fruit type from image using deep learning(TensorFlow and Keras).
+|
+This tool provdes a standard restful api for prediction. It can also be used to train with new images.
+|
+This web api is called by blogapp (<a class="reference external" href="https://github.com/wdmhouston/capstone_project_blogapp">https://github.com/wdmhouston/capstone_project_blogapp</a>) to predict any image uploaded through blogapp.
+Check blogapp for more details.
+|
+The following picture shows how this web api(in red box) works with blogapp to privide Fruit Prediction service to end user.</p>
 <img alt="_images/container.jpg" class="align-center" src="_images/container.jpg" />
-<p>Please refer the following guide to deploy, test and train the model included in this tool.</p>
+<p>This web api includes a trained model(Please refer to “Train model” for more details) with multiple layers setup shown in the following picture:</p>
+<img alt="_images/model.jpg" class="align-center" src="_images/model.jpg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The following picture shows the accuracy and loss plot from one training:</p>
+<img alt="_images/performance.jpg" class="align-center" src="_images/performance.jpg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>A live demo is available in showcase section of my personal website: <a class="reference external" href="http://www.wdmhouston.com">http://www.wdmhouston.com</a></p>
+<p>The following screenshots show how to predict fruit in blogapp and display the returned json data from this web api.</p>
+<img alt="_images/demo1.jpg" class="align-center" src="_images/demo1.jpg" />
+<img alt="_images/demo2.jpg" class="align-center" src="_images/demo2.jpg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The source code of this web api is available in github <a class="reference external" href="https://github.com/wdmhouston/capstone_project_fruit_prediction">https://github.com/wdmhouston/capstone_project_fruit_prediction</a></p>
+<p>Please refer the following guide to deploy, train and test this web api service.</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="deployment.html#repository">Repository</a></li>
@@ -100,15 +124,15 @@ Check blogapp for more details.</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="indices-and-tables">
+</section>
+<section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
+</section>
 
 
            </div>
